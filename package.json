@@ -1,0 +1,29 @@
+{
+  "name": "mediaquery-events",
+  "version": "0.1.0",
+  "description": "squirrel-forge mediaquery events, use media queries as events",
+  "main": "index.js",
+  "directories": {
+    "example": "example",
+    "src": "src"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/squirrel-forge/mediaquery-events.git"
+  },
+  "keywords": [
+    "javascript",
+    "es6",
+    "mediaqueries",
+    "events"
+  ],
+  "author": "Daniel Hartwell aka. siux <me@siux.info>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/squirrel-forge/mediaquery-events/issues"
+  },
+  "homepage": "https://github.com/squirrel-forge/mediaquery-events#readme"
+}

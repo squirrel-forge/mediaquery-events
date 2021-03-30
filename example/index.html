@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="de">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
+    <title>squirrel-forge mediaquery-events</title>
+    <style type="text/css">
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body>
+<h1 id="query">...</h1>
+<script type="module">
+
+    // Import the class
+    import { MediaQueryEvents } from '../src/MediaQueryEvents.js';
+
+    // Create instance with your preferred options
+    const media = new MediaQueryEvents( document, console );
+
+    // Define a handler
+    const _event_handler = ( event ) => {
+        if ( event.detail.event.matches ) {
+            document.getElementById( 'query' ).innerText = event.detail.query;
+        }
+        console.log( event.detail.event.matches ? 'Active' : 'Inactive', 'query >>>', event.detail.query );
+    };
+
+    // Bind some events
+    media.addEventListener( 'media.on', _event_handler );
+    media.addEventListener( 'media.off', _event_handler );
+    media.addEventListener( 'media.change', _event_handler );
+    media.addEventListener( '(max-width: 767px)', _event_handler );
+    media.addEventListener( '(min-width: 768px) and (max-width: 1024px)', _event_handler );
+    media.addEventListener( '(min-width: 1025px)', _event_handler );
+</script>
+</body>
+</html>
