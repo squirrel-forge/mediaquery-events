@@ -8,11 +8,18 @@ If you have any feedback or issues, please feel free to submit an issue here: [g
 
 See the [CHANGELOG](CHANGELOG.md) for version details.
 
+## Installing
+```
+# npm i @squirrel-forge/mediaquery-events
+```
+Since the code is es6 standard, it's recommended to use babel to transpile before shipping to production.
+No precompiled version included currently.
+
 ## Usage
 
 ```javascript
 // Import the class
-import { MediaQueryEvents } from 'mediaquery-events';
+import { MediaQueryEvents } from '@squirrel-forge/mediaquery-events';
 
 // Create instance with your preferred options
 const media = new MediaQueryEvents( document, console );

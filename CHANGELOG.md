@@ -1,3 +1,6 @@
+# 0.5.0
+ - Updated readme docs to include npm install reference
+
 # 0.4.0
  - Updated changelog and npm package scope
 
