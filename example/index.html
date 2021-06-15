@@ -7,39 +7,43 @@
     <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
     <title>squirrel-forge mediaquery-events</title>
     <style type="text/css">
-        h1 {
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            text-align: center;
+        }
+        h2 {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
+        footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-<h1 id="query">...</h1>
-<script type="module">
-
-    // Import the class
-    import { MediaQueryEvents } from '../src/MediaQueryEvents.js';
-
-    // Create instance with your preferred options
-    const media = new MediaQueryEvents( document, console );
-
-    // Define a handler
-    const _event_handler = ( event ) => {
-        if ( event.detail.event.matches ) {
-            document.getElementById( 'query' ).innerText = event.detail.query;
-        }
-        console.log( event.detail.event.matches ? 'Active' : 'Inactive', 'query >>>', event.detail.query );
-    };
-
-    // Bind some events
-    media.addEventListener( 'media.on', _event_handler );
-    media.addEventListener( 'media.off', _event_handler );
-    media.addEventListener( 'media.change', _event_handler );
-    media.addEventListener( '(max-width: 767px)', _event_handler );
-    media.addEventListener( '(min-width: 768px) and (max-width: 1024px)', _event_handler );
-    media.addEventListener( '(min-width: 1025px)', _event_handler );
-</script>
+<header>
+    <h1>MediaQueryEvents</h1>
+    <p>
+        Code on <a href="https://github.com/squirrel-forge/mediaquery-events#readme" target="_blank">github</a>,
+        compatible only with current browsers,
+        see <a href="https://caniuse.com/mdn-api_mediaquerylistevent_mediaquerylistevent" target="_blank">caniuse</a> for details.
+    </p>
+</header>
+<h2 id="query">[not compatible with your browser]</h2>
+<footer>
+    <p>
+        &copy;2021
+        <a href="http://sqrl-forge.com" target="_blank">sqrl-forge</a>
+        and <a href="http://siux.info" target="_blank">siux.info</a>
+    </p>
+</footer>
+<script type="text/javascript" src="bundle.min.js"></script>
 </body>
 </html>

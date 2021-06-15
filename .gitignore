@@ -29,4 +29,7 @@ build.properties
 ### SublimeText ###
 *.sublime-workspace
 
+### Node ###
+node_modules/
+
 # Much credit to http://gitignore.io

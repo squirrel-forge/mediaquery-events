@@ -1,7 +1,7 @@
 # mediaquery-events
 
-Use media queries as event handlers, under the hood this uses **window.matchMedia** and **CustomEvent** so it is only compatible with current browsers.
-You should be able to polyfill both issues with custom code if required.
+Use media queries as event handlers, under the hood this uses **window.matchMedia**, **MediaQueryListEvent** and **CustomEvent** so it is only compatible with current browsers, see details on [caniuse](https://caniuse.com/mdn-api_mediaquerylistevent_mediaquerylistevent).
+Polyfilling the missing parts should be possible, please feel free to add a polyfill setup to make it compatible with older browsers such as IE11 or Safari < 14. The big desktop browsers such as Edge, Chrome, Opera, Firefox all support the required parts of the api, even down to the current Chrome on Android 4.4.
 The module offers a few more options than described here, please check the source comments for details.
 
 If you have any feedback or issues, please feel free to submit an issue here: [github Issues](https://github.com/squirrel-forge/mediaquery-events/issues).
