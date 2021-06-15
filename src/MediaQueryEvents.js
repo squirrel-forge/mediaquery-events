@@ -55,6 +55,7 @@ export class MediaQueryEvents {
         // Make event data
         const data = {
             target : this,
+            matches : event.matches,
             media : this._queries[ query ],
             event : event,
             query : query,
@@ -171,6 +172,7 @@ export class MediaQueryEvents {
             // Get event data
             const data = {
                 target : this,
+                matches : true,
                 media : media,
                 query : query,
             };
