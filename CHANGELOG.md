@@ -1,3 +1,6 @@
+# 0.6.0
+ - Removed debugging code
+
 # 0.5.0
  - Updated readme docs to include npm install reference
 

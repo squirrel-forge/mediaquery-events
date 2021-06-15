@@ -9,14 +9,12 @@ export class MediaQueryEvents {
      * Constructor
      *
      * @param {Document|HTMLElement} eventTarget - Element to dispatch events on
-     * @param {null|console} debug - Console or alike object to show debugging
      */
-    constructor( eventTarget = document, debug = null ) {
+    constructor( eventTarget = document ) {
         if ( !eventTarget || typeof eventTarget.dispatchEvent !== 'function' ) {
             throw new Error( this.constructor.name + '::constructor Must define a valid event target!' );
         }
         this._target = eventTarget;
-        this._debug = debug;
         this._queries = {};
     }
 
@@ -87,14 +85,6 @@ export class MediaQueryEvents {
      */
     _dispatchEvent( name, data = null ) {
 
-        // Debug info
-        if ( this._debug ) {
-            this._debug.groupCollapsed( this.constructor.name + '::_dispatchEvent [ ' + name + ' ]' );
-            this._debug.log( 'On', this._target );
-            this._debug.log( 'With', data );
-            this._debug.groupEnd();
-        }
-
         // Create event
         const event = new CustomEvent( name, { bubbles : true, cancelable : false, detail : data } );
 
@@ -146,7 +136,7 @@ export class MediaQueryEvents {
      *
      * @param {string} query - Media query
      * @param {Function} callback - Callback to register for event
-     * @param {boolean} useCapture - Capture style
+     * @param {boolean|Object} useCapture - Capture style or options
      * @param {boolean} dontFire - Do not fire on match
      *
      * @return {MediaQueryEvents}
@@ -158,15 +148,6 @@ export class MediaQueryEvents {
 
         // Add actual listener
         this._target.addEventListener( query, callback, useCapture );
-
-        // Notify register
-        if ( this._debug ) {
-            this._debug.groupCollapsed( this.constructor.name + '::addEventListener [ ' + query + ' ]' );
-            this._debug.log( 'On', this._target );
-            this._debug.log( 'With', callback );
-            this._debug.log( 'Capture', useCapture );
-            this._debug.groupEnd();
-        }
 
         // Fire only new handler if matching initially
         if ( dontFire !== true && media.matches ) {
@@ -199,18 +180,9 @@ export class MediaQueryEvents {
      *
      * @param {string} query - Media query
      * @param {function} callback - Callback to remove from event
-     * @param {boolean} useCapture - Capture style
+     * @param {boolean|Object} useCapture - Capture style or options
      */
     removeEventListener( query, callback, useCapture = false ) {
         this._target.removeEventListener( query, callback, useCapture );
-
-        // Notify remove
-        if ( this._debug ) {
-            this._debug.groupCollapsed( this.constructor.name + '::removeEventListener [ ' + name + ' ]' );
-            this._debug.log( 'On', this._target );
-            this._debug.log( 'With', callback );
-            this._debug.log( 'Capture', useCapture );
-            this._debug.groupEnd();
-        }
     }
 }

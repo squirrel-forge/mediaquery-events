@@ -4,7 +4,7 @@
 import { MediaQueryEvents } from '../src/MediaQueryEvents.js';
 
 // Create instance with your preferred options
-const media = new MediaQueryEvents( document, console );
+const media = new MediaQueryEvents( document );
 
 /**
  * Event handler

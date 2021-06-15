@@ -22,7 +22,7 @@ No precompiled version included currently.
 import { MediaQueryEvents } from '@squirrel-forge/mediaquery-events';
 
 // Create instance with your preferred options
-const media = new MediaQueryEvents( document, console );
+const media = new MediaQueryEvents( document );
 
 // Define a handler
 const _event_handler = ( event ) => {
