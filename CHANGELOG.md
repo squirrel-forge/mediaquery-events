@@ -1,3 +1,11 @@
+# 0.4.0
+ - Updated changelog and npm package scope
+
+# 0.3.0
+ - Cleaned up the demo
+ - Added a webpack config for the demo
+ - Updated the readme
+
 # 0.2.0
  - Added *event.detail.matches:boolean* to the custom event as a shortcut for *event.detail.event.matches*
 
