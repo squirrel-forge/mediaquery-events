@@ -2,10 +2,10 @@ const path = require("path");
 
 module.exports = {
     mode : "production",
-    entry : { "mediaquery-events" : "./src/build.js" },
+    entry : { "bundle" : "./example/demo.js" },
     output : {
         filename : "[name].min.js",
-        path : path.resolve( __dirname, "build/" ),
+        path : path.resolve( __dirname, "example/" ),
     },
     module: {
         rules: [

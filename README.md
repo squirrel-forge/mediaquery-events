@@ -17,6 +17,12 @@ No precompiled version included currently.
 
 ## Usage
 
+Import a precompiled webpack version that binds to **window.media** if not defined and is always available through **window.mqe**.
+```javascript
+import '../node_modules/@squirrel-forge/mediaquery-events/build/mediaquery-events.min.js';
+```
+
+Recommended usage:
 ```javascript
 // Import the class
 import { MediaQueryEvents } from '@squirrel-forge/mediaquery-events';

@@ -1,3 +1,7 @@
+# 0.7.0
+ - Moved demo webpack
+ - Added window bound webpack build version
+
 # 0.6.0
  - Removed debugging code
 
