@@ -17,19 +17,7 @@ $RECYCLE.BIN/
 *.iws
 .idea/
 
-### NetBeans ###
-nbproject/
-nbbuild/
-nbdist/
-nbactions.xml
-nb-configuration.xml
-build.xml
-build.properties
-
-### SublimeText ###
-*.sublime-workspace
-
-### Node ###
-node_modules/
-
 # Much credit to http://gitignore.io
+
+### Internal ###
+node_modules/
