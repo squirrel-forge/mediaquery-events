@@ -1,7 +1,7 @@
 {
   "name": "@squirrel-forge/mediaquery-events",
-  "version": "0.7.0",
-  "description": "squirrel-forge mediaquery events, use media queries as events",
+  "version": "0.8.0",
+  "description": "Use css media queries as javascript event names.",
   "main": "index.js",
   "directories": {
     "build": "build",
@@ -9,6 +9,8 @@
     "src": "src"
   },
   "scripts": {
+    "build": "simple-webpack src/mediaquery-events.js build -p -s -i --map",
+    "example": "simple-webpack example/src example/dist -p -s -i --map --no-minify --keep-names",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,10 +18,14 @@
     "url": "git+https://github.com/squirrel-forge/mediaquery-events.git"
   },
   "keywords": [
-    "javascript",
-    "es6",
     "mediaqueries",
-    "events"
+    "custom-events",
+    "events",
+    "ui",
+    "es6",
+    "javascript",
+    "babel",
+    "browser"
   ],
   "author": "Daniel Hartwell aka. siux <me@siux.info>",
   "license": "MIT",
@@ -28,10 +34,6 @@
   },
   "homepage": "https://github.com/squirrel-forge/mediaquery-events#readme",
   "devDependencies": {
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.5",
-    "babel-loader": "^8.2.2",
-    "webpack": "^5.39.0",
-    "webpack-cli": "^4.7.2"
+    "@squirrel-forge/simple-webpack": "^0.12.x"
   }
 }
