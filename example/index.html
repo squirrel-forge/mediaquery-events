@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html dir="ltr" lang="de">
+<html dir="ltr" lang="en">
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" name="viewport">
-    <title>squirrel-forge mediaquery-events</title>
+    <title>@squirrel-forge/mediaquery-events demo</title>
     <style type="text/css">
         header {
             position: absolute;
@@ -13,11 +13,13 @@
             width: 100%;
             text-align: center;
         }
-        h2 {
+        section {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            max-width: calc(100% - 2rem);
+            text-align: center;
         }
         footer {
             position: absolute;
@@ -29,17 +31,18 @@
 </head>
 <body>
 <header>
-    <h1>MediaQueryEvents</h1>
-    <p>
-        Code on <a href="https://github.com/squirrel-forge/mediaquery-events#readme" target="_blank">github</a>,
-        compatible only with current browsers,
-        see <a href="https://caniuse.com/mdn-api_mediaquerylistevent_mediaquerylistevent" target="_blank">caniuse</a> for details.
-    </p>
+    <h1>@squirrel-forge/mediaquery-events demo</h1>
+    <p>Check the documentation on <a href="https://github.com/squirrel-forge/mediaquery-events#readme" target="_blank">github</a><br />
+        or install directly from <a href="https://www.npmjs.com/package/@squirrel-forge/mediaquery-events" target="_blank">npm</a>.</p>
 </header>
-<h2 id="query">[not compatible with your browser]</h2>
+<section id="query">
+    <h2>If you can see this an error occurred</h2>
+    <p><strong>mediaquery-events</strong> is not compatible with your browser,<br />
+        please feel free to open an <a href="https://github.com/squirrel-forge/mediaquery-events/issues" target="_blank">issue</a>.</p>
+</section>
 <footer>
-    <p>&copy;2021 sqrl-forge and siux.info</p>
+    <p>&copy;2022 <a href="https://github.com/squirrel-forge" target="_blank">sqrl-forge</a></p>
 </footer>
-<script type="text/javascript" src="bundle.min.js"></script>
+<script type="text/javascript" src="dist/demo.min.js"></script>
 </body>
 </html>
