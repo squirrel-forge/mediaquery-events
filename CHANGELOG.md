@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.8.1
+ - Added *MediaQueryEvents.reservedNames* static property to prevent creating invalid media queries for global bindings.
+
 ## 0.8.0
  - Full structural refactor, abilities and api remain unchanged in terms of backward compatibility following changes were made:
    - Constructor argument has changed to an *Object* with 3 options
