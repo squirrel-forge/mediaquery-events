@@ -1,6 +1,6 @@
 # @squirrel-forge/mediaquery-events
 **Use css media queries as javascript event names.**
-Simply don't worry about matching css media queries with custom javascript code, just bind a listener with the query as the event name and be done.
+Simply don't worry about matching css media queries with custom javascript code, just bind a listener with the query as the event name and be done, the actual module, depending on how you use or implement it will be ~5kb in size.
 
 ## Installation
 ```
@@ -19,7 +19,7 @@ Polyfilling the missing parts is possible, please feel free to add a polyfill se
 ## Recommended usage:
 
 ### Using es10 modules
-Import the required class and or ponyFill from the module.
+Import the required class and or ponyFill from the module, you have full control.
 ```javascript
 import { MediaQueryEvents, MediaQueryListEventPonyFill } from '@squirrel-forge/mediaquery-events';
 ```
@@ -48,9 +48,13 @@ Now you can start [binding events](#binding-and-using-media-query-events).
 ## Legacy usage:
 
 ### Using the precompiled and minified webpack build
-Import a precompiled webpack version that attempts to bind to **window.media** and **window.mqe** as long as these are previously undefined.
+Import or include a precompiled webpack version that attempts to bind to **window.media** and **window.mqe** as long as these are previously undefined.
 ```javascript
 import '@squirrel-forge/mediaquery-events/build/mediaquery-events.min.js';
+```
+Or:
+```html
+<script src=".../@squirrel-forge/mediaquery-events/build/mediaquery-events.min.js"
 ```
 The *media* binding can be overridden by setting your own names as following:
 ```javascript
@@ -172,7 +176,7 @@ For more details check the [MediaQueryListEventPonyFill source file](src/MediaQu
 
 ---
 
-## Issues and docs
+## Issues
 If you encounter any issues, please report [here](https://github.com/squirrel-forge/mediaquery-event/issues).
 
 ---
