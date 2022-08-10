@@ -5,6 +5,16 @@
 export class MediaQueryEvents {
 
     /**
+     * Reserved event names
+     *  no queries are created for those defined here since they would not work
+     * @public
+     * @static
+     * @property
+     * @type {Array<string>}
+     */
+    static reservedNames = [ 'media.on', 'media.off', 'media.change' ];
+
+    /**
      * Debug object
      * @private
      * @property
@@ -88,7 +98,7 @@ export class MediaQueryEvents {
      * Get existing or create new media query
      * @private
      * @param {string} query - Media query string
-     * @return {MediaQueryList} - MediaQueryList object representation of media query
+     * @return {MediaQueryList|null} - MediaQueryList object representation of media query or null if reserved
      */
     #require_query( query ) {
 
@@ -96,6 +106,9 @@ export class MediaQueryEvents {
         if ( typeof query !== 'string' || !query.length ) {
             throw new Error( 'MediaQueryEvents::#require_query Argument query must be a non empty string' );
         }
+
+        // Check reserved event names
+        if ( this.constructor.reservedNames.includes( query ) ) return null;
 
         // Create query
         if ( !this.#queries[ query ] ) {
@@ -248,7 +261,7 @@ export class MediaQueryEvents {
         this.#target.addEventListener( query, callback, useCapture );
 
         // Fire new handler only if matching initially and not explicitly prevented
-        if ( dontFire !== true && media.matches ) {
+        if ( media && dontFire !== true && media.matches ) {
 
             // Get event data
             const matches = true;
