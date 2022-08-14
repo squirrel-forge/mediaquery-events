@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.8.2
+ - Added *MediaQueryEvents.matches()* method to check if given query currently matches.
+
 ## 0.8.1
  - Added *MediaQueryEvents.reservedNames* static property to prevent creating invalid media queries for global bindings.
 
