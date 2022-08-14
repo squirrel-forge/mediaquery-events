@@ -205,6 +205,16 @@ export class MediaQueryEvents {
     }
 
     /**
+     * Check if given query matches
+     * @public
+     * @param {string} query - Media query
+     * @return {boolean|null} - Null if reserved or error
+     */
+    matches( query ) {
+        return this.#require_query( query )?.matches;
+    }
+
+    /**
      * Require multiple media queries
      * @public
      * @param {Array.<string>} queries - A list of media queries that are used as events
