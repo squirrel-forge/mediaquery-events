@@ -1,6 +1,6 @@
 {
   "name": "@squirrel-forge/mediaquery-events",
-  "version": "0.8.1",
+  "version": "0.8.2",
   "description": "Use css media queries as javascript event names.",
   "main": "index.js",
   "directories": {

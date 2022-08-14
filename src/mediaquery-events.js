@@ -1,6 +1,6 @@
 /* !
  * @module      : @squirrel-forge/mediaquery-events
- * @version     : 0.8.1
+ * @version     : 0.8.2
  * @license     : MIT
  * @copyright   : 2022 squirrel-forge
  * @author      : Daniel Hartwell aka. siux <me@siux.info>
