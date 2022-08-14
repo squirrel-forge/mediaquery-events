@@ -130,6 +130,14 @@ media.requireQueries( [
     '(min-width: 1025px)',
 ] );
 ```
+Using the *MediaQueryEvents.matches()* method returns the queries matching state.
+It will create the given media query like the *requireQueries* method if it does not exist.
+```javascript
+// Check a queries state manually
+if ( media.matches( '(max-width: 767px)' ) ) {
+    // Do something
+}
+```
 Check the example for working code [demo.js source file](example/src/demo.js).
 
 ---
@@ -143,8 +151,9 @@ MediaQueryEvents class - Supplies media query event functionality.
 ```javascript
 class MediaQueryEvents {
     constructor( { target = window, ponyfill = null, debug = null } ) {}
-    target : window|document|HTMLElement|Object // read only
-    debug : null|console // settable
+    target : window|document|HTMLElement|Object // Read only
+    debug : null|console // Settable Object
+    matches( query ) {} // Boolean|Null
     requireQueries( queries ) {} // MediaQueryEvents
     dispatchEvent( query, matches = null ) {} // MediaQueryEvents
     addEventListener( query, callback, useCapture = false, dontFire = false ) {} // MediaQueryEvents
@@ -160,6 +169,8 @@ For more details check the [MediaQueryEvents source file](src/MediaQueryEvents.j
  - **media.on** - Fired once when a query goes active.
  - **media.off** - Fired once when a query goes inactive.
  - **media.change** - Fires in both cases described above.
+
+---
 
 ### MediaQueryListEventPonyFill
 MediaQueryListEventPonyFill class - PonyFill class that provides a replacement object for when MediaQueryListEvent cannot be constructed.
